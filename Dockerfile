@@ -18,7 +18,9 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 RUN curl -L $URL -o /tmp/archive_${VERSION}.zip && \
     echo "${SHA256}  /tmp/archive_${VERSION}.zip" | sha256sum -c - && \
     unzip /tmp/archive_${VERSION}.zip -d /staging && \
-    rm -f /tmp/archive_${VERSION}.zip
+    rm -f /tmp/archive_${VERSION}.zip && \
+    mv /staging/${VERSION}/* /staging/ && \
+    rm -r /staging/${VERSION}
 
 # Runtime image
 FROM debian:9-slim
@@ -45,11 +47,11 @@ WORKDIR /opt/terraria
 #     rm -rf /var/lib/apt/lists/* && rm -rf /tmp/* && rm -rf /var/tmp/*
 
 # Copy default configuration
-COPY --from=staging /staging/${VERSION}/Windows/serverconfig.txt \
+COPY --from=staging /staging/Windows/serverconfig.txt \
         serverconfig-example.txt
 
 # Copy terraria binaries
-COPY --from=staging /staging/${VERSION}/Linux .
+COPY --from=staging /staging/Linux .
 RUN chmod +x TerrariaServer \
     TerrariaServer.bin.x86 \
     TerrariaServer.bin.x86_64
