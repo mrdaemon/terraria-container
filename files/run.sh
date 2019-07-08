@@ -25,7 +25,7 @@ if [[ ! -w $TERRARIA_VOLUME ]] ; then
 fi
 
 # Ensure base directories are present in volume
-mkdir -p "$TERRARIA_WOLRDSDIR"
+mkdir -p "$TERRARIA_WORLDSDIR"
 
 ## Initial Run Generation
 
