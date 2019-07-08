@@ -1,0 +1,17 @@
+# Development/testing compose file
+# You can also use this as a reference for production
+#
+# Make sure the uid in user: matches your current uid
+version: '3'
+services:
+  terraria:
+    user: 1000:1000
+    build:
+      context: .
+    image: mrdaemon/terraria:experimental
+    environment:
+      TERRARIA_PORT: 7777
+    ports:
+      - 7777:7777/tcp
+    volumes:
+      - ./testvolume:/data
