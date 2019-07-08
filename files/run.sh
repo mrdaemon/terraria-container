@@ -5,7 +5,7 @@
 # Environment Variables used within this script come from the
 # container, see Dockerfile.
 
-CONFIG = "$TERRARIA_VOLUME/serverconfig.txt"
+CONFIG="$TERRARIA_VOLUME/serverconfig.txt"
 
 ## Sanity Checks
 
