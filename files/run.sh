@@ -54,4 +54,4 @@ if [[ ! -f $CONFIG ]] ; then
 fi
 
 # Handoff to Terraria binary
-exec TerrariaServer -config $CONFIG -port $TERRARIA_PORT -noupnp
+exec ${TERRARIA_HOME}/TerrariaServer -config $CONFIG -port $TERRARIA_PORT -noupnp
