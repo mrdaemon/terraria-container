@@ -54,4 +54,5 @@ if [[ ! -f $CONFIG ]] ; then
 fi
 
 # Handoff to Terraria binary
-exec ./TerrariaServer -config $CONFIG -port $TERRARIA_PORT -noupnp
+export MONO_IOMAP=all
+exec ./TerrariaServer.bin.x86_64 -config $CONFIG -port $TERRARIA_PORT -noupnp
