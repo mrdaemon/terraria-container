@@ -36,15 +36,11 @@ ENV TERRARIA_PORT 7777
 ENV TERRARIA_WORLDSDIR ${TERRARIA_VOLUME}/worlds
 
 # Create runtime directories
-RUN mkdir -p /opt/terraria && mkdir /data
+# $HOME/.local is hardcoded for unimportant runtime data
+RUN mkdir -p /opt/terraria && mkdir /data && \
+    ln -sf /tmp /.local
 
 WORKDIR /opt/terraria
-
-# Install runtime dependencies
-# RUN apt-get update && apt-get install --no-install-recommends -y \
-#     pwgen && \
-#     apt-get clean && \
-#     rm -rf /var/lib/apt/lists/* && rm -rf /tmp/* && rm -rf /var/tmp/*
 
 # Copy default configuration
 COPY --from=staging /staging/Windows/serverconfig.txt \
