@@ -57,7 +57,7 @@ Production
 
 1. Create a user and group to use as a service account on the docker host, note the uid and gid. It can be a system user if you'd like (ex: 999:999)
 2. Create a directory tree somewhere on the host to hold the game data and configuration, e.g: `mkdir -p /srv/terraria`
-3. (optional) Place your existing `serverconfiguration.txt` file in the root of the directory, and your `.wld` world files under `worlds/`.
+3. (optional) Place your existing `serverconfig.txt` file in the root of the directory, and your `.wld` world files under `worlds/`.
 4. Edit the server configuration file to match the new paths. The directory on the host is mounted under `/data`, so in the above example, an example path would be `/data/worlds/world1.wld`.
 5. Change ownership and permissions on this directory tree on the host to match the service account and group you've created in step 1
 6. Run the container with `--user 999:999` where the uid and gid are the ones of the service account and group, and use a volume mount for the data directory on `/data`
