@@ -6,6 +6,7 @@ version: '3'
 services:
   terraria:
     user: 1000:1000
+    tty: true
     build:
       context: .
     image: mrdaemon/terraria:experimental
