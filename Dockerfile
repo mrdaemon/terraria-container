@@ -58,6 +58,6 @@ RUN chmod +x ./run.sh
 
 VOLUME [${TERRARIA_VOLUME}]
 
-EXPOSE ${TERRARIA_PORT}/udp
+EXPOSE ${TERRARIA_PORT}/tcp
 
 ENTRYPOINT [ "/opt/terraria/run.sh" ]
