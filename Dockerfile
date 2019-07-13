@@ -1,5 +1,5 @@
 # Intermediate staging container
-FROM debian:9-slim AS staging
+FROM debian:10-slim AS staging
 
 ARG VERSION="1353"
 ARG SHA256="63b232323f094ea71e49ec1bb578a816b751db9f872ad70ebc1d921b8d15f250"
@@ -23,7 +23,7 @@ RUN curl -L $URL -o /tmp/archive_${VERSION}.zip && \
     rm -r /staging/${VERSION}
 
 # Runtime image
-FROM debian:9-slim
+FROM debian:10-slim
 
 LABEL maintainer="Alexandre Gauthier <alex@lab.underwares.org>" \
     description="Terraria Server"
