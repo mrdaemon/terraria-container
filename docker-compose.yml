@@ -9,7 +9,7 @@ services:
     tty: true
     build:
       context: .
-    image: mrdaemon/terraria:experimental
+    image: mrdaemon/terraria:local
     environment:
       TERRARIA_PORT: 7777
     ports:
