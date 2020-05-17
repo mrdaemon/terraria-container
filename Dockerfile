@@ -3,7 +3,7 @@ FROM debian:10-slim AS staging
 
 ARG VERSION="1402"
 ARG SHA256="795aa5bc2e6afd88587af9c596a8c13aabc89f83"
-ARG URL="https://terraria.org/server/terraria-server-${VERSION}.zip"
+ARG URL="https://terraria.org/system/dedicated_servers/archives/000/000/036/original/terraria-server-${VERSION}.zip"
 
 # Create staging directory
 RUN mkdir -p /staging
