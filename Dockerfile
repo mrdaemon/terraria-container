@@ -48,9 +48,7 @@ COPY --from=staging /staging/Windows/serverconfig.txt \
 
 # Copy terraria binaries
 COPY --from=staging /staging/Linux .
-RUN chmod +x TerrariaServer \
-    TerrariaServer.bin.x86 \
-    TerrariaServer.bin.x86_64
+RUN chmod +x TerrariaServer TerrariaServer.bin.x86_64
 
 # Copy wrapper script
 COPY files/run.sh .
