@@ -1,7 +1,7 @@
 Terraria Container
 ==================
 
-[![Terraria Image CI Pipeline](https://github.com/mrdaemon/terraria-container/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/mrdaemon/terraria-container/actions/workflows/main.yml)
+[![Image Build](https://github.com/mrdaemon/terraria-container/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/mrdaemon/terraria-container/actions/workflows/main.yml)
 
 A hopefully reasonable Terraria server instance in a Docker Container
 
