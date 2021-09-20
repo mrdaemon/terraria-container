@@ -1,9 +1,9 @@
 # Intermediate staging container
-FROM debian:10-slim AS staging
+FROM debian:11-slim AS staging
 
-ARG VERSION="1412"
-ARG SHA256="10e6a806e121abb31f3cf46731a6b7e37544d247ea656320b8deffe8e4f10ca2"
-ARG URL="https://terraria.org/system/dedicated_servers/archives/000/000/042/original/terraria-server-${VERSION}.zip"
+ARG VERSION="1423"
+ARG SHA256="12bd93494a31a1487384af1d6e86ee52edce72e2f093e90ee9eaa516eabaa462"
+ARG URL="https://terraria.org/api/download/pc-dedicated-server/terraria-server-${VERSION}.zip"
 
 # Create staging directory
 RUN mkdir -p /staging
@@ -23,7 +23,7 @@ RUN curl -L $URL -o /tmp/archive_${VERSION}.zip && \
     rm -r /staging/${VERSION}
 
 # Runtime image
-FROM debian:10-slim
+FROM debian:11-slim
 
 LABEL maintainer="Alexandre Gauthier <alex@lab.underwares.org>" \
     description="Terraria Server"
